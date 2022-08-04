@@ -71,6 +71,10 @@ bottomNavigationBar: BottomNavigationBar(
       label: 'CIDR',
       icon: Icon(Icons.library_books),
     ),
+    BottomNavigationBarItem(
+      label: 'IPV6',
+      icon: Icon(Icons.account_tree_sharp)
+    ),
   ],
 ),
 
