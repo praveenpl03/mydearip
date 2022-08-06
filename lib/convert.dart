@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mydearip/models/ipconvertor.dart';
+import 'package:MyDearIP/models/ipconvertor.dart';
 import 'package:regexed_validator/regexed_validator.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:dart_ping/dart_ping.dart';
@@ -60,12 +60,12 @@ myint.text = bin.toString();
      });
      ipping.text = "";
     // var result =   FlutterNetworkConnection.startWithType('http://baidu.com', type: 'Ping');
-    // print('当前网络质量：' + result);
+
      final ping = Ping(myController.text, count: 5);
 
      // [Optional]
      // Preview command that will be run (helpful for debugging)
-     print('Running command: ${ping.command}');
+     //print('Running command: ${ping.command}');
 
      // Begin ping process and listen for output
      ping.stream.listen((event) {

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mydearip/classes.dart';
-import 'package:mydearip/cidr.dart';
-import 'package:mydearip/convert.dart';
-import 'package:mydearip/subnet.dart';
+import 'package:MyDearIP/classes.dart';
+import 'package:MyDearIP/cidr.dart';
+import 'package:MyDearIP/convert.dart';
+import 'package:MyDearIP/subnet.dart';
+
+import 'items.dart';
 
 
 void main()=>runApp(MyApp());
@@ -11,7 +13,7 @@ int _selectedindex =0;
 late Widget _cidr = Cidr();
 late Widget _classes= Classes();
 late Widget _convert= Convert();
-late Widget _subnet= Subnet();
+late Widget _subnet= SomePage();
 late List<Widget> _pages = [_convert,_classes,_subnet,_cidr];
 late Widget _currentPage = _pages[_selectedindex];
 class MyApp extends StatefulWidget{
@@ -33,15 +35,20 @@ class MyAppState extends State<MyApp>{
     });
   }
   Widget build(BuildContext context) {
-   return MaterialApp(home: Scaffold(
+   return MaterialApp(
+       debugShowCheckedModeBanner: false,home: Scaffold(
      backgroundColor: Colors.blueGrey,
      appBar: AppBar(leading: Image.asset("image/lan.png",
        scale: 15,
      ),
        title: Text("mY.dEAr.#.iP", style: GoogleFonts.squadaOne(
            textStyle: TextStyle(color: Colors.greenAccent, letterSpacing: 1,fontSize: 30))),
-         actions: [
-     Icon(Icons.info),],
+        /* actions: [
+     ElevatedButton.icon(
+         onPressed:()=>{
+           
+         },
+         icon:Icon(Icons.info), label: Text("i"),],*/
        backgroundColor: Colors.black45,
      ) ,
 
@@ -68,14 +75,14 @@ bottomNavigationBar: BottomNavigationBar(
       label: 'Subnets',
       icon: Icon(Icons.holiday_village_outlined),
     ),
-    BottomNavigationBarItem(
-      label: 'CIDR',
-      icon: Icon(Icons.library_books),
-    ),
+  BottomNavigationBarItem(
+      label: 'Info',
+      icon: Icon(Icons.info),
+    ), /*
     BottomNavigationBarItem(
       label: 'IPV6',
       icon: Icon(Icons.account_tree_sharp)
-    ),
+    ),*/
   ],
 ),
 
